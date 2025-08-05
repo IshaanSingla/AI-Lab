@@ -92,7 +92,7 @@ void PrintFinalStack()
 }
 int main()
 {
-    vector<vector<int>> initialState = {{1,2,3}, {5,7,6}, {4,0,8}};
+    vector<vector<int>> initialState = {{1,2,3}, {4,5,6}, {7,0,8}};
     stack<vector<vector<int>>> initialStack;
     initialStack.push(initialState);
     mainStack.push(initialStack);
@@ -101,7 +101,7 @@ int main()
 
     while(!mainStack.empty())
     {
-        cout<<"mainStack Size" << mainStack.size()<<"\n";
+        cout<<"mainStack Size: " << mainStack.size()<<"\n";
         stack<vector<vector<int>>> stateStack(mainStack.top());
         mainStack.pop();
         if(CheckGoalState(stateStack))
