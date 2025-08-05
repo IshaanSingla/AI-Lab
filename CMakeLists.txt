@@ -3,5 +3,11 @@ project(AI_Lab)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(AI_Lab
+add_executable(8TileProblemDFS.cpp
         "Lab01/8 tile problem DFS.cpp")
+add_executable(BestFirstSearch "Lab02/Best First Search.cpp")
+add_executable(Jugs "Lab02/Jugs.cpp")
+add_executable(MagicSquare Lab02/MagicSqaure.cpp)
+add_executable(TicTacToe "Lab02/Tic Tac Toe.cpp")
+add_executable(AStar Lab03/A-Star.cpp)
+add_executable(8TileProblemBFS "Lab01/8 tile problem BFS.cpp")
