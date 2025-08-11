@@ -10,11 +10,11 @@ stack<vector<vector<int>>> finalStack;
 bool CheckGoalState(stack<vector<vector<int>>> &s)
 {
     if (s.empty()) return false;
-    vector<vector<int>> currentState = s.top();
+    const vector<vector<int>>& currentState = s.top();
     return currentState == GoalState;
 }
 
-bool find(vector<vector<int>> &s)
+bool find(const vector<vector<int>> &s)
 {
     for(auto &visit : Visited)
     {
@@ -30,8 +30,9 @@ bool find(vector<vector<int>> &s)
 vector<stack<vector<vector<int>>>> findMoves(stack<vector<vector<int>>> &s)
 {
     vector<stack<vector<vector<int>>>> moves;
-    vector<vector<int>> currentState = s.top();
-    int zeroRow, zeroCol;
+    const vector<vector<int>>& currentState = s.top();
+    int zeroRow = -1;
+    int zeroCol = -1;
 
     
     for (int i = 0; i < 3; ++i)
@@ -48,11 +49,11 @@ vector<stack<vector<vector<int>>>> findMoves(stack<vector<vector<int>>> &s)
     }
 
     
-    vector<pair<int, int>> directions = {{1, 0}, {0, -1}, {-1, 0}, {0, 1}};
+    const vector<pair<int, int>> directions = {{1, 0}, {0, -1}, {-1, 0}, {0, 1}};
     for (auto &dir : directions)
     {
-        int newRow = zeroRow + dir.first;
-        int newCol = zeroCol + dir.second;
+        const int newRow = zeroRow + dir.first;
+        const int newCol = zeroCol + dir.second;
 
         if (newRow >= 0 && newRow < 3 && newCol >= 0 && newCol < 3)
         {
@@ -71,7 +72,7 @@ vector<stack<vector<vector<int>>>> findMoves(stack<vector<vector<int>>> &s)
 //write in a file
 void PrintFinalStack()
 {
-    stack<vector<vector<int>>> tempStack = finalStack;
+    const stack<vector<vector<int>>> tempStack = finalStack;
     cout << "Final Stack:\n";
     while (!finalStack.empty())
     {
