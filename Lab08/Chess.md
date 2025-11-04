@@ -142,14 +142,6 @@ Press ENTER to reset everything.
 
 ---
 
-## Full Code
-
-```python
-<The full chess code is exactly what the user provided and is not repeated here for compactness.>
-```
-
----
-
 ## Time Complexity
 
 | Feature | Complexity |
